@@ -10,9 +10,12 @@ request.onload = function () {
         
         var filteredCountries = result.filter(country => country.region === "Asia")
        .map((filteredCountries)=>filteredCountries.name.common)
-
-        console.log(filteredCountries);
-    } 
+         var a = filteredCountries.forEach((elem)=>{
+               console.log(elem)
+         })
+        //console.log(filteredCountries);
+    
+}
 
 // // 2.Get all the countries with a population of less than 2 lakhs using Filter function
 var request1 = new XMLHttpRequest();
@@ -22,8 +25,11 @@ request1.onload=function(){
     var result1=JSON.parse(request1.response);
     var pop = result1.filter(element =>element.population<200000)
     .map((element)=>element.name.common)
+    pop.forEach(ele=> {
+      console.log(ele)
+    })
     
-    console.log(pop)
+    
 }
 
 
@@ -73,5 +79,6 @@ req.onload = function () {
     console.log(a)
       
 };
+
 
 
