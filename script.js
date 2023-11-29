@@ -66,9 +66,12 @@ req.send();
 
 req.onload = function () {
     var res = JSON.parse(req.response);
-    var currency = res.filter((element) => element.currencies === "USD")
-    .map((res)=>res.name.common)
-    console.log(currency)
+    var currency = res.filter((element) => element.currencies)
+    var cur = currency.map((dol)=>dol.currencies)
+     var a = cur.filter((doller)=>doller.USD)
+
+    console.log(a)
+      
 };
 
 
